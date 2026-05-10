@@ -3,13 +3,15 @@
 
 #vantage(
   name: configuration.contacts.name,
+  profileImage: configuration.profileImage,
   position: configuration.position,
   links: (
-    (name: "email", link: "mailto:"+ configuration.contacts.email),
+    (name: "phone", link: "tel:"+ configuration.contacts.phone, display: configuration.contacts.phone),
+    (name: "email", link: "mailto:"+ configuration.contacts.email, display: configuration.contacts.email),
     (name: "website", link: configuration.contacts.website.url, display: configuration.contacts.website.displayText),
     (name: "github", link: configuration.contacts.github.url, display: configuration.contacts.github.displayText),
     (name: "linkedin", link: configuration.contacts.linkedin.url, display: configuration.contacts.linkedin.displayText),
-    (name: "location", link: "", display: configuration.contacts.address)
+    (name: "location", link: "#", display: configuration.contacts.address)
   ),
   tagline: (configuration.tagline),
   [
@@ -25,7 +27,7 @@
         - #point
       ]
     ]
-    
+
   ],
   [
     == Objective
@@ -64,7 +66,7 @@
     #for method in configuration.methodology [
       • #method
     ]
-    
+
     == Tools
     #for tool in configuration.tools [
       • #tool

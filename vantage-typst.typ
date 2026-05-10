@@ -24,7 +24,7 @@
       }
     }).join(h(10pt))
   [
-    
+
   ]
 }
 
@@ -53,14 +53,14 @@
 
     // Add rounded corners for the first and last boxes
     if (i == 1) {
-      radiusValue = (left: 2em, right: 0em)  
+      radiusValue = (left: 2em, right: 0em)
     } else if (i == max_rating) {
-      radiusValue = (left: 0em, right: 2em) 
+      radiusValue = (left: 0em, right: 2em)
     }
 
     box(rect(
-      height: 0.3em, 
-      width: 1.5em, 
+      height: 0.3em,
+      width: 1.5em,
       stroke: strokeColor,
       fill: colour,
       radius: radiusValue
@@ -84,9 +84,11 @@
 
 #let vantage(
   name: "",
+  profileImage: "",
   position: "",
   links: (),
   tagline: [],
+  fontFamily: "New Computer Modern",
   leftSide,
   rightSide
 ) = {
@@ -94,7 +96,7 @@
     title: name + "'s CV",
     author: name,
   )
-  set text(9.8pt, font: "PT Sans")
+  set text(9.8pt, font: fontFamily)
   set page(
     margin: (x: 1.2cm, y: 1.2cm),
   )
@@ -115,7 +117,7 @@
   show heading.where(
     level: 3
   ): it => text(it.body)
-  
+
   show heading.where(
     level: 4
   ): it => text(
@@ -123,13 +125,22 @@
     it.body
   )
 
+  if (profileImage != "") {
+    place(
+      top + right,
+      dx: -5pt,
+      dy: -15pt,
+      image(profileImage, width: 2cm, height: 3cm)
+    )
+  }
+
   [= #name]
   text(12pt, weight: "medium",[#position])
 
   v(0pt)
   findMe(links)
 
-  tagline
+  eval(tagline, mode: "markup")
 
   grid(
     columns: (7fr, 4fr),

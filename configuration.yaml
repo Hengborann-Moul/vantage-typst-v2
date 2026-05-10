@@ -1,8 +1,9 @@
 contacts:
   name: John Doe
-  title: Software Engineer
+  title: Applied Machine Learning Engineer
   email: johndoe@example.com
   address: "City, Country"
+  phone: "+85511111111"
   location: Country
   linkedin:
     url: https://www.linkedin.com/in/johndoe/
@@ -14,9 +15,10 @@ contacts:
     url: https://johndoe.com
     displayText: www.johndoe.com
 
-position: Software Engineer
+profileImage: "images/profile.png"
+position: Applied Machine Learning Engineer
 
-tagline: Software engineer with 5 years of experience and a strong foundation in computer science, skilled in developing software for innovative industries. Proficient in JavaScript/TypeScript, Python, and C/C++, with a solid understanding of system architecture and design principles.
+tagline: "*Applied Machine Learning Engineer* with 5 years of experience building and deploying ML systems at scale. Skilled in Python, deep learning frameworks (PyTorch, TensorFlow), and *MLOps* practices. Strong foundation in *statistics*, data pipelines, and translating ML research into production-ready solutions."
 
 jobs:
   - position: Lead Software Developer
